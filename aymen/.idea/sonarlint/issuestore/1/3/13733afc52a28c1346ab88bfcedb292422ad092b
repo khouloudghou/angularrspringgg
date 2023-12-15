@@ -1,0 +1,7 @@
+
+Gtypescript:S1128"$Remove this unused import of 'Bloc'.(ïß¨„8Ó«ÿ‚Ã1
+Qtypescript:S1128".Remove this unused import of 'ChambreService'.(ƒµô›8Ó«ÿ‚Ã1
+Stypescript:S1128"+Remove this unused import of 'BlocService'.(‚²ÍÍùÿÿÿÿ8Ó«ÿ‚Ã1
+Mtypescript:S1128	"%Remove this unused import of 'Route'.( üš•ûÿÿÿÿ8Ó«ÿ‚Ã1
+jtypescript:S1533"BReplace this "String" wrapper object with primitive type "string".(•Ú¡šýÿÿÿÿ8Õ«ÿ‚Ã1
+Ötypescript:S1874;"²'(next?: ((value: Foyer) => void) | null | undefined, error?: ((error: any) => void) | null | undefined, complete?: (() => void) | null | undefined): Subscription' is deprecated.(Â¨„â8Õ«ÿ‚Ã1

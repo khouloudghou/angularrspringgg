@@ -1,0 +1,85 @@
+
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet">
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <div class="d-flex justify-content-between align-items-center">
+      <h6 class="m-0 font-weight-bold text-primary">Il existe etudiant (s) </h6>
+      <a routerLink='dashboard/addetudiant' class="btn btn-primary">Ajouter</a>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="search-container mb-3 text-center">
+      <label for="searchInput" class="sr-only">Rechercher</label>
+      <div class="input-group">
+        <input type="text" id="searchInput" placeholder="Rechercher..." class="form-control" [(ngModel)]="searchTerm" (input)="onSearch()">
+        <div class="input-group-append">
+      <span class="input-group-text bg-primary">
+        <i class="fa fa-search text-white"></i>
+      </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Afficher la liste filtrée -->
+
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" >
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Cin</th>
+            <th>Date Naissance</th>
+            <th>Ecole</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+
+          </thead>
+          <tbody *ngFor="let etud of filteredList"  >
+          <tr>
+            <td class="user-link">{{etud.id}}</td>
+            <td>{{etud.nom}}</td>
+            <td>{{etud.prenom}}</td>
+            <td>{{etud.cin}}</td>
+            <td>{{etud.dateNaissance}}</td>
+            <td>{{etud.ecole}}</td>
+            <td>{{etud.email}}</td>
+            <td>{{etud.role}}</td>
+            <td style="width: 20%;">
+              <a href="#" class="table-link text-success"> <!-- Couleur verte -->
+                <span class="fa-stack">
+                    <i class="fa fa-square fa-stack-2x"></i>
+                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              <a [routerLink]="['/dashboard/etudiant/update', etud.id]" class="table-link text-primary" > <!-- Couleur bleue -->
+                <span class="fa-stack" >
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                 </span>
+              </a>
+              <a href="#" class="table-link text-danger" (click)="delete(etud.id)"> <!-- Couleur rouge -->
+                <span class="fa-stack">
+                  <i class="fa fa-square fa-stack-2x"></i>
+                  <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </td>
+<!--            <button  [routerLink]="['/dashboard/etudiant/update', etud.id] "class="btn btn-info">Update</button>-->
+
+
+
+          </tr>
+
+          </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+
+

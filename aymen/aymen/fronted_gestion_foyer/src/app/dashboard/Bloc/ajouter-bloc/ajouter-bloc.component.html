@@ -1,0 +1,61 @@
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet">
+<div class="card shadow mb-4 mx-2">
+  <div class="card-header py-3">
+    <form #formBloc="ngForm" (ngSubmit)="addBloc(formBloc)" class="form-group row">
+      <div class="col-3">
+        <input type="text" ngModel name="nomBloc" required minlength="3" pattern="[a-zA-Z]*" #nomModel="ngModel" class="form-control bg-white dark:text-gray-100 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-4500 dark:placeholder-gray-300" placeholder="Nom du bloc" style="height: 40px; font-size: 12px;">
+      </div>
+      <div class="col-3">
+        <input type="text" ngModel name="capaciteBloc" required minlength="3" pattern="[a-zA-Z]*" #nomModel="ngModel" class="form-control bg-white dark:text-gray-100 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-4500 dark:placeholder-gray-300" placeholder="Capacité Bloc" style="height: 40px; font-size: 12px;">
+      </div>
+      <div class="col-2">
+        <button type="submit" class="btn bg-primary text-white" ><strong>Ajouter</strong></button>
+      </div>
+    </form>
+  </div>
+
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable">
+        <thead>
+        <tr>
+          <th>Id Bloc</th>
+          <th>Nom</th>
+          <th>Capacité</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let bloc of listBloc">
+        <tr>
+          <td>{{bloc.idBloc}}</td>
+          <td>{{bloc.nomBloc}}</td>
+          <td>{{bloc.capaciteBloc}}</td>
+          <td style="width: 10%;">
+<!--            <a href="#" class="table-link text-success">-->
+<!--            <span class="fa-stack">-->
+<!--              <i class="fa fa-square fa-stack-2x"></i>-->
+<!--              <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>-->
+<!--            </span>-->
+<!--            </a>-->
+            <a class="table-link text-primary">
+            <span class="fa-stack">
+              <i class="fa fa-square fa-stack-2x"></i>
+              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+            <a href="#" class="table-link text-danger">
+            <span class="fa-stack">
+              <i class="fa fa-square fa-stack-2x"></i>
+              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+
+
+
